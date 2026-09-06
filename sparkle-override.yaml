@@ -16,7 +16,6 @@
   - name: 国外流量
     type: select
     proxies:
-      - 全球自动
       - 故障转移
       - 全球手动
       - 香港策略
@@ -40,24 +39,8 @@
       - 韩国策略
       - 美国策略
 
-  # 总故障转移：按地区策略组顺序选择可用出口
+  # 总故障转移：跨所有订阅节点测速，自动选择当前低延迟可用节点
   - name: 故障转移
-    type: fallback
-    proxies:
-      - 美国策略
-      - 日本策略
-      - 狮城策略
-      - 韩国策略
-      - 香港策略
-      - 台湾策略
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    timeout: 5000
-    max-failed-times: 3
-    empty-fallback: REJECT
-
-  # 全局最低延迟：跨所有订阅节点统一测速并自动选择当前最快节点
-  - name: 全球自动
     type: url-test
     include-all: true
     exclude-type: Direct|Reject
@@ -65,6 +48,7 @@
     interval: 300
     tolerance: 50
     timeout: 5000
+    max-failed-times: 3
     empty-fallback: REJECT
 
   # 手动选择全部节点
@@ -90,8 +74,8 @@
   - name: 即时通讯
     type: select
     proxies:
-      - 狮城策略
       - 故障转移
+      - 狮城策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -103,8 +87,8 @@
   - name: 社交平台
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -116,8 +100,8 @@
   - name: 人工智能
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -129,8 +113,8 @@
   - name: 开发服务
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -142,8 +126,8 @@
   - name: EMBY
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -155,8 +139,8 @@
   - name: 国际媒体
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -194,8 +178,8 @@
   - name: 谷歌服务
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -207,8 +191,8 @@
   - name: 脸书服务
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略
@@ -220,8 +204,8 @@
   - name: 微软服务
     type: select
     proxies:
-      - 美国策略
       - 故障转移
+      - 美国策略
       - 全球手动
       - 香港策略
       - 台湾策略

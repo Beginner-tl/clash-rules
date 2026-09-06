@@ -22,8 +22,9 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 国内流量
@@ -36,8 +37,9 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
 
   # 总故障转移：先比较各地区自动组，再由地区自动组选择本地区低延迟节点
   - name: 故障转移
@@ -47,8 +49,9 @@
       - 台湾自动
       - 日本自动
       - 狮城自动
-      - 韩国自动
       - 美国自动
+      - 澳洲自动
+      - 英国自动
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -71,8 +74,9 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   # 专用服务
@@ -85,8 +89,9 @@
       - 香港策略
       - 台湾策略
       - 日本策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 社交平台
@@ -99,7 +104,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 人工智能
@@ -112,7 +118,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 开发服务
@@ -125,7 +132,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: EMBY
@@ -138,7 +146,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 国际媒体
@@ -151,7 +160,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 游戏下载
@@ -164,8 +174,9 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
 
   - name: 游戏平台商店
     type: select
@@ -176,8 +187,9 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 谷歌服务
@@ -190,7 +202,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 脸书服务
@@ -203,7 +216,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 微软服务
@@ -216,7 +230,8 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
+      - 澳洲策略
+      - 英国策略
       - DIRECT
 
   - name: 苹果服务
@@ -229,8 +244,9 @@
       - 台湾策略
       - 日本策略
       - 狮城策略
-      - 韩国策略
       - 美国策略
+      - 澳洲策略
+      - 英国策略
 
   # 地区策略组：手动选择 / 自动测速 / 负载均衡
   - name: 香港策略
@@ -269,15 +285,6 @@
       - 狮城自动
       - 狮城均衡
 
-  - name: 韩国策略
-    type: select
-    include-all: true
-    filter: "(?i)韩国|韓國|首尔|kr|icn|gmp|pus|korea|seoul"
-    exclude-filter: "排除"
-    proxies:
-      - 韩国自动
-      - 韩国均衡
-
   - name: 美国策略
     type: select
     include-all: true
@@ -286,6 +293,22 @@
     proxies:
       - 美国自动
       - 美国均衡
+
+  - name: 澳洲策略
+    type: select
+    include-all: true
+    filter: "(?i)澳|australia|sydney|syd|^au-"
+    exclude-filter: "排除"
+    proxies:
+      - 澳洲自动
+
+  - name: 英国策略
+    type: select
+    include-all: true
+    filter: "(?i)英国|united ?kingdom|london|lon|^uk-"
+    exclude-filter: "排除"
+    proxies:
+      - 英国自动
 
   - name: 香港自动
     type: url-test
@@ -335,10 +358,22 @@
     empty-fallback: REJECT
     hidden: true
 
-  - name: 韩国自动
+  - name: 澳洲自动
     type: url-test
     include-all: true
-    filter: "(?i)韩国|韓國|首尔|kr|icn|gmp|pus|korea|seoul"
+    filter: "(?i)澳|australia|sydney|syd|^au-"
+    exclude-filter: "排除"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    timeout: 5000
+    empty-fallback: REJECT
+    hidden: true
+
+  - name: 英国自动
+    type: url-test
+    include-all: true
+    filter: "(?i)英国|united ?kingdom|london|lon|^uk-"
     exclude-filter: "排除"
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -396,17 +431,6 @@
     type: load-balance
     include-all: true
     filter: "(?i)新加坡|坡|sg|sin|singapore"
-    exclude-filter: "排除"
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    strategy: consistent-hashing
-    empty-fallback: REJECT
-    hidden: true
-
-  - name: 韩国均衡
-    type: load-balance
-    include-all: true
-    filter: "(?i)韩国|韓國|首尔|kr|icn|gmp|pus|korea|seoul"
     exclude-filter: "排除"
     url: https://www.gstatic.com/generate_204
     interval: 300

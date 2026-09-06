@@ -12,8 +12,8 @@
 # - filter 按节点名称分类。节点名称不含地区关键词时，需要调整对应 filter。
 
 +proxy-groups:
-  # 路由策略
-  - name: 网络测试
+  # 核心出口
+  - name: 国外流量
     type: select
     proxies:
       - 故障转移
@@ -26,6 +26,55 @@
       - 美国策略
       - DIRECT
 
+  - name: 国内流量
+    type: select
+    proxies:
+      - DIRECT
+      - 故障转移
+      - 全球手动
+      - 香港策略
+      - 台湾策略
+      - 日本策略
+      - 狮城策略
+      - 韩国策略
+      - 美国策略
+
+  # 总故障转移：按地区策略组顺序选择可用出口
+  - name: 故障转移
+    type: fallback
+    proxies:
+      - 美国策略
+      - 日本策略
+      - 狮城策略
+      - 韩国策略
+      - 香港策略
+      - 台湾策略
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    timeout: 5000
+    max-failed-times: 3
+    empty-fallback: REJECT
+
+  # 手动选择全部节点
+  - name: 全球手动
+    type: select
+    include-all: true
+    exclude-type: Direct|Reject
+
+  - name: 漏网之鱼
+    type: select
+    proxies:
+      - 故障转移
+      - 全球手动
+      - 香港策略
+      - 台湾策略
+      - 日本策略
+      - 狮城策略
+      - 韩国策略
+      - 美国策略
+      - DIRECT
+
+  # 专用服务
   - name: 即时通讯
     type: select
     proxies:
@@ -130,19 +179,6 @@
       - 美国策略
       - DIRECT
 
-  - name: 货币平台
-    type: select
-    proxies:
-      - 日本策略
-      - 故障转移
-      - 全球手动
-      - 香港策略
-      - 台湾策略
-      - 狮城策略
-      - 韩国策略
-      - 美国策略
-      - DIRECT
-
   - name: 谷歌服务
     type: select
     proxies:
@@ -194,67 +230,6 @@
       - 狮城策略
       - 韩国策略
       - 美国策略
-
-  - name: 国外流量
-    type: select
-    proxies:
-      - 故障转移
-      - 全球手动
-      - 香港策略
-      - 台湾策略
-      - 日本策略
-      - 狮城策略
-      - 韩国策略
-      - 美国策略
-      - DIRECT
-
-  - name: 国内流量
-    type: select
-    proxies:
-      - DIRECT
-      - 故障转移
-      - 全球手动
-      - 香港策略
-      - 台湾策略
-      - 日本策略
-      - 狮城策略
-      - 韩国策略
-      - 美国策略
-
-  - name: 漏网之鱼
-    type: select
-    proxies:
-      - 故障转移
-      - 全球手动
-      - 香港策略
-      - 台湾策略
-      - 日本策略
-      - 狮城策略
-      - 韩国策略
-      - 美国策略
-      - DIRECT
-
-  # 总故障转移：按地区策略组顺序选择可用出口
-  - name: 故障转移
-    type: fallback
-    proxies:
-      - 美国策略
-      - 日本策略
-      - 狮城策略
-      - 韩国策略
-      - 香港策略
-      - 台湾策略
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    timeout: 5000
-    max-failed-times: 3
-    empty-fallback: REJECT
-
-  # 手动选择全部节点
-  - name: 全球手动
-    type: select
-    include-all: true
-    exclude-type: Direct|Reject
 
   # 地区策略组：手动选择 / 自动测速 / 负载均衡
   - name: 香港策略
@@ -458,10 +433,14 @@ rules:
   - RULE-SET,PrivateIP,DIRECT,no-resolve
   - RULE-SET,CrossBorder,DIRECT
 
+  # 日志确认的非广告补充项已并入既有 Direct / Proxy 分类
+  - RULE-SET,Direct,DIRECT
+
   # 阿里妈妈香港域名：按国内直连处理，避免被 .hk 后缀归入国际流量
   - DOMAIN-SUFFIX,alimama.hk,DIRECT
 
-  - RULE-SET,Speedtest,网络测试
+  # 网络测速、CDN 性能探测和 RUM 端点不需要切换，直接连接
+  - RULE-SET,Speedtest,DIRECT
 
   - RULE-SET,TM,即时通讯
   - RULE-SET,Telegram,即时通讯
@@ -480,28 +459,16 @@ rules:
   - RULE-SET,Streaming,国际媒体
   - RULE-SET,StreamingIP,国际媒体,no-resolve
 
-  # 你新增的“下载”规则集优先直连，必须放在“商店”前面
-  # 这样商店、登录、社区等平台服务仍会进入下面的游戏平台策略组
+  # 下载规则集已合并上游列表和本地确认的 CDN，优先于商店规则集
+  # 这样大文件下载/更新进入“游戏下载”，商店、登录、社区等平台服务仍进入商店策略组
   - RULE-SET,下载,游戏下载
-  - RULE-SET,下载补充,游戏下载
-
-  # 补充部分 CDN 域名，防止下载规则集未收录时被平台关键词规则误判为代理
-  - DOMAIN-SUFFIX,dl.steam.clngaa.com,DIRECT
-  - DOMAIN-SUFFIX,steamcontent.com,DIRECT
-  - DOMAIN-SUFFIX,steam.cdn.on.net,DIRECT
-  - DOMAIN-SUFFIX,steam.cdn.orcon.net.nz,DIRECT
-  - DOMAIN-SUFFIX,steam.cdn.slingshot.co.nz,DIRECT
-  - DOMAIN-SUFFIX,steam.cdn.webra.ru,DIRECT
-  - DOMAIN-SUFFIX,steam.apac.qtlglb.com,DIRECT
-  - DOMAIN-SUFFIX,steam.eca.qtlglb.com,DIRECT
-  - DOMAIN-SUFFIX,steam.naeu.qtlglb.com,DIRECT
-  - DOMAIN-SUFFIX,steam.ru.qtlglb.com,DIRECT
 
   # 国际游戏平台商店统一进入“游戏平台商店”策略组
 
-  # 你新增的“商店”规则集：平台服务、商店、登录和游戏服务器走可选策略
+  # 商店规则集：平台服务、商店、登录和游戏服务器走可选策略
   - RULE-SET,商店,游戏平台商店
-  - RULE-SET,Crypto,货币平台
+  # 货币平台保留独立规则集，直接归入国外流量，不单独提供切换策略
+  - RULE-SET,Crypto,国外流量
 
   - RULE-SET,Google,谷歌服务
   - RULE-SET,GoogleIP,谷歌服务,no-resolve
@@ -528,11 +495,9 @@ rule-providers:
   Dev: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Dev.mrs}
   Emby: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Emby.mrs}
   Streaming: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Streaming.mrs}
-  # 你新增的“下载”规则集：游戏下载、更新和 CDN 直连
-  # 使用游戏专用的上游分类，不把通用软件 Download 规则作用到其他软件
+  # 下载规则集：上游分类与本地确认的游戏 CDN 已合并
   下载: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/GameDownload.mrs}
-  下载补充: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/GameDownloadCustom.mrs}
-  # 你新增的“商店”规则集：使用  Games 总表作为平台服务兜底
+  # 商店规则集：使用 Games 总表作为平台服务兜底
   商店: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/GameStore.mrs}
   Crypto: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Crypto.mrs}
   Google: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Google.mrs}
@@ -540,6 +505,7 @@ rule-providers:
   Facebook: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Facebook.mrs}
   Proxy: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Proxy.mrs}
   China: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/China.mrs}
+  Direct: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Direct.mrs}
   Speedtest: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/Speedtest.mrs}
   PrivateIP: {type: http, behavior: ipcidr, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/ip/Private.mrs}
   CrossBorder: {type: http, behavior: domain, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/domain/CrossBorder.mrs}
@@ -551,4 +517,5 @@ rule-providers:
   ProxyIP: {type: http, behavior: ipcidr, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/ip/Proxy.mrs}
   ChinaIP: {type: http, behavior: ipcidr, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/ip/China.mrs}
   GoogleIP: {type: http, behavior: ipcidr, format: mrs, interval: 86400, url: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/ip/Google.mrs}
+
 

@@ -59,8 +59,12 @@ jobs:
           test -s dist/mihomo/domain/GameStore.txt
           test -s dist/mihomo/domain/GameDownload.mrs
           test -s dist/mihomo/domain/GameDownload.txt
-          test -s dist/mihomo/domain/GameDownloadCustom.mrs
-          test -s dist/mihomo/domain/GameDownloadCustom.txt
+          test -s dist/mihomo/domain/Speedtest.mrs
+          test -s dist/mihomo/domain/Speedtest.txt
+          test -s dist/mihomo/domain/Direct.mrs
+          test -s dist/mihomo/domain/Direct.txt
+          test -s dist/mihomo/domain/Proxy.mrs
+          test -s dist/mihomo/domain/Proxy.txt
           test -s dist/mihomo/domain/CrossBorder.mrs
           test -s dist/mihomo/domain/CrossBorder.txt
           test -s dist/mihomo/MANIFEST.json
@@ -98,3 +102,4 @@ jobs:
             echo "- Sparkle override: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/sparkle-override.yaml"
             echo "- Rule base: https://raw.githubusercontent.com/Beginner-tl/Mihomo-rules/main/mihomo/<domain|ip>/<Name>.<mrs|txt>"
           } >> "$GITHUB_STEP_SUMMARY"
+

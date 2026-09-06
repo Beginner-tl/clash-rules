@@ -17,6 +17,13 @@
 +.steamusercontent.com
 lancache.steamcontent.com
 
+# 日志确认但上游未覆盖的 Steam 镜像 CDN；并入 GameDownload，跟随“游戏下载”策略组。
++.steam.cdn.on.net
++.steam.cdn.orcon.net.nz
++.steam.cdn.slingshot.co.nz
++.steam.cdn.webra.ru
++.steam.apac.qtlglb.com
+
 # ---------- Epic Games 下载 CDN ----------
 cdn.epicgames.com
 cdn1.epicgames.com
@@ -64,3 +71,4 @@ patches.rockstargames.com
 gamedownloads-rockstargames-com.akamaized.net
 media-rockstargames-com.akamaized.net
 videos-rockstargames-com.akamaized.net
+

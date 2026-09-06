@@ -1,0 +1,16 @@
+# 国内平台、ERP、字体和证书校验端点；不需要单独选择节点，统一直连。
++.huice.com
+hc-web.wdtdata.com
++.alipayobjects.com
+ynuf.aliapp.org
+one.alimama.com
+fb.alimama.com
+pass.alimama.com
+pcookie.alimama.com
+sigma-webdrive-popo.proxima.nie.easebar.com
+sg.tgalileo.com
+fontsapi.zeoseven.com
+crl.globalsign.com
+ocsp2.globalsign.com
+ocsp.globalsign.com
+

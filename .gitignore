@@ -6,6 +6,7 @@ tmp/
 # 编辑器
 .vscode/
 .idea/
+__pycache__/
 *.swp
 .DS_Store
 
@@ -16,3 +17,4 @@ dist/
 # 个人订阅 / 节点信息 —— 切勿提交
 *.sub.yaml
 secrets/
+

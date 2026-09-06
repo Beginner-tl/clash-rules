@@ -15,8 +15,22 @@ upstream:
   artifact_root: mihomo
   game_store_source: https://raw.githubusercontent.com/666OS/rules/release/mihomo/domain/Games.txt
   game_download_source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download.list
+  game_download_files:
+    - scripts/custom/game-download.list
   game_download_exclude_files:
     - scripts/custom/game-domestic.list
+
+# 只移除上游 AI 分类中的宽泛共享基础域条目；明确列出的 AI 子域仍保留。
+mirrored_entry_exclusions:
+  AI:
+    - +.googleapis.com
+    - +.googleusercontent.com
+    - +.algolia.net
+    - +.auth0.com
+    - +.sentry.io
+    - static.cloudflareinsights.com
+    - +.apis.google.com
+    - default.exp-tas.com
 
 derived:
   - name: GameStore
@@ -26,27 +40,37 @@ derived:
       - scripts/custom/game-domestic.list
     files:
       - scripts/custom/game-store.list
+      - scripts/custom/game-extra.list
+
+  # 在已有 Speedtest 分类上叠加日志确认的 CDN/RUM 测量端点。
+  - name: Speedtest
+    behavior: domain
+    source_url: https://raw.githubusercontent.com/666OS/rules/release/mihomo/domain/Speedtest.txt
+    files:
+      - scripts/custom/network-extra.list
+
+  # 在已有 Direct 分类上叠加日志确认的国内直连和证书校验端点。
+  - name: Direct
+    behavior: domain
+    source_url: https://raw.githubusercontent.com/666OS/rules/release/mihomo/domain/Direct.txt
+    files:
+      - scripts/custom/domestic-direct.list
+
+  # 在已有 Proxy 分类上叠加已确认的非广告海外内容和服务端点。
+  - name: Proxy
+    behavior: domain
+    source_url: https://raw.githubusercontent.com/666OS/rules/release/mihomo/domain/Proxy.txt
+    files:
+      - scripts/custom/content-extra.list
+      - scripts/custom/service-extra.list
+      - scripts/custom/brand-extra.list
 
 custom:
-  - name: GameDownloadCustom
-    behavior: domain
-    files:
-      - scripts/custom/game-download.list
-
   - name: CrossBorder
     behavior: domain
     files:
       - scripts/custom/crossborder-ecommerce.list
 
-  - name: CustomDirect
-    behavior: domain
-    files:
-      - scripts/custom/custom-direct.list
-
-  - name: CustomProxy
-    behavior: domain
-    files:
-      - scripts/custom/custom-proxy.list
-
 # scripts/custom/emby.list 默认不编译到公开产物，避免扩散私人影视服务域名；
 # 如果确认要公开，再把它作为一个 custom 项加入。
+

@@ -17,7 +17,9 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "scripts" / "sources.yaml"
 DIST = ROOT / "dist" / "mihomo"
-WORK = ROOT / ".mihomo" / "work"
+# Use a per-run cache directory. On Windows, Git's pack files can remain
+# briefly locked after clone; a unique directory avoids deleting a prior run.
+WORK = ROOT / ".mihomo" / f"work-{os.getpid()}"
 
 
 def log(message: str) -> None:
@@ -120,6 +122,17 @@ def filter_entries(entries: set[str], exclusions: list[str]) -> list[str]:
     )
 
 
+def filter_exact_entries(entries: set[str], exclusions: list[str]) -> list[str]:
+    """Remove only explicitly listed rule lines, preserving specific exceptions."""
+    excluded = {value.strip().lower() for value in exclusions if value.strip()}
+    return sorted(entry for entry in entries if entry.strip().lower() not in excluded)
+
+
+def mihomo_behavior(behavior: str) -> str:
+    """Map repository behavior names to Mihomo's convert-ruleset names."""
+    return "domain" if behavior == "domain" else "ipcidr"
+
+
 def write_readable_txt(
     destination: Path,
     name: str,
@@ -163,17 +176,32 @@ def compile_mrs(
         ),
         encoding="utf-8",
     )
-    run([mihomo, "convert-ruleset", behavior, "yaml", str(payload), str(output)])
+    run(
+        [
+            mihomo,
+            "convert-ruleset",
+            mihomo_behavior(behavior),
+            "yaml",
+            str(payload),
+            str(output),
+        ]
+    )
     if not output.is_file() or output.stat().st_size < 32:
         raise RuntimeError(f"mihomo produced an invalid MRS: {output}")
     log(f"compiled {output.relative_to(ROOT)} ({len(entries)} entries)")
     return len(entries)
 
 
-def copy_base_rules(upstream_dir: Path, artifact_root: str) -> tuple[int, int]:
+def copy_base_rules(
+    upstream_dir: Path,
+    artifact_root: str,
+    mihomo: str,
+    entry_exclusions: dict[str, list[str]] | None = None,
+) -> tuple[int, int]:
     copied_mrs = 0
     copied_txt = 0
     source_root = upstream_dir / artifact_root
+    entry_exclusions = entry_exclusions or {}
 
     for behavior in ("domain", "ip"):
         source_dir = source_root / behavior
@@ -181,13 +209,27 @@ def copy_base_rules(upstream_dir: Path, artifact_root: str) -> tuple[int, int]:
         target_dir.mkdir(parents=True, exist_ok=True)
 
         for source in sorted(source_dir.glob("*.mrs")):
-            shutil.copy2(source, target_dir / source.name)
-            copied_mrs += 1
+            if source.stem not in entry_exclusions:
+                shutil.copy2(source, target_dir / source.name)
+                copied_mrs += 1
 
         # Rebuild readable TXT files so published metadata does not carry
         # upstream author fields; the rule entries themselves are preserved.
         for source in sorted(source_dir.glob("*.txt")):
             entries = read_entries(source.read_text(encoding="utf-8"))
+            exclusions = entry_exclusions.get(source.stem, [])
+            if exclusions:
+                filtered_entries = filter_exact_entries(set(entries), exclusions)
+                compiled = compile_mrs(
+                    source.stem,
+                    behavior,
+                    filtered_entries,
+                    mihomo,
+                    "mirrored base entries with exact exclusions",
+                )
+                copied_mrs += 1 if compiled else 0
+                copied_txt += 1
+                continue
             write_readable_txt(
                 target_dir / source.name,
                 source.stem,
@@ -210,20 +252,29 @@ def main() -> None:
         shutil.rmtree(WORK)
     WORK.mkdir(parents=True, exist_ok=True)
 
-    upstream_dir = WORK / "base-rules"
-    run(
-        [
-            "git",
-            "clone",
-            "--depth",
-            "1",
-            "--single-branch",
-            "--branch",
-            upstream["branch"],
-            upstream["repo"],
-            str(upstream_dir),
-        ]
-    )
+    cached_upstream = os.environ.get("MIHOMO_UPSTREAM_DIR")
+    if cached_upstream:
+        upstream_dir = Path(cached_upstream).expanduser().resolve()
+        if not (upstream_dir / upstream.get("artifact_root", "mihomo")).is_dir():
+            raise FileNotFoundError(
+                f"cached upstream does not contain the configured artifact root: {upstream_dir}"
+            )
+        log(f"using cached upstream {upstream_dir}")
+    else:
+        upstream_dir = WORK / "base-rules"
+        run(
+            [
+                "git",
+                "clone",
+                "--depth",
+                "1",
+                "--single-branch",
+                "--branch",
+                upstream["branch"],
+                upstream["repo"],
+                str(upstream_dir),
+            ]
+        )
     upstream_commit = run(
         ["git", "-C", str(upstream_dir), "rev-parse", "HEAD"],
         capture=True,
@@ -231,6 +282,8 @@ def main() -> None:
     mirrored_mrs, mirrored_txt = copy_base_rules(
         upstream_dir,
         upstream.get("artifact_root", "mihomo"),
+        mihomo,
+        config.get("mirrored_entry_exclusions", {}),
     )
     log(
         f"mirrored base rules: {mirrored_mrs} MRS, "
@@ -242,6 +295,9 @@ def main() -> None:
 
     # Build the complete game-download rule from the upstream readable list.
     download_entries = set(read_entries(fetch_text(upstream["game_download_source"])))
+    download_entries.update(
+        read_local_entries(upstream.get("game_download_files", []))
+    )
     download_exclusions = read_local_entries(
         upstream.get("game_download_exclude_files", [])
     )
@@ -319,3 +375,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

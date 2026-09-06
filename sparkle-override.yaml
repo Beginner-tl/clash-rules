@@ -39,11 +39,16 @@
       - 韩国策略
       - 美国策略
 
-  # 总故障转移：跨所有订阅节点测速，自动选择当前低延迟可用节点
+  # 总故障转移：先比较各地区自动组，再由地区自动组选择本地区低延迟节点
   - name: 故障转移
     type: url-test
-    include-all: true
-    exclude-type: Direct|Reject
+    proxies:
+      - 香港自动
+      - 台湾自动
+      - 日本自动
+      - 狮城自动
+      - 韩国自动
+      - 美国自动
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50

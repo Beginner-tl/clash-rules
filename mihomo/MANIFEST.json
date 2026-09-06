@@ -1,23 +1,20 @@
 {
-  "generated_at": "2026-09-05T18:30:09.446057+00:00",
+  "generated_at": "2026-09-06T07:54:17.124472+00:00",
   "base_rules": {
     "branch": "release",
-    "commit": "1ae44b2b73e5fc6ca9b92445b837fe0a1824ee5f"
+    "commit": "5028a8a663d1f00a6a733d4985ffecc14e3b70dc"
   },
   "mirrored_mrs": 58,
   "mirrored_txt": 58,
-  "derived_entries": 1023,
-  "download_entries": 486,
+  "derived_entries": 32888,
+  "download_entries": 523,
   "custom_entries": {
-    "GameDownloadCustom": 42,
-    "CrossBorder": 27,
-    "CustomDirect": 0,
-    "CustomProxy": 0
+    "CrossBorder": 27
   },
   "mrs_artifacts": [
     {
       "path": "domain/AI.mrs",
-      "bytes": 2634
+      "bytes": 2587
     },
     {
       "path": "domain/Advertising.mrs",
@@ -37,7 +34,7 @@
     },
     {
       "path": "domain/China.mrs",
-      "bytes": 539915
+      "bytes": 538995
     },
     {
       "path": "domain/Claude.mrs",
@@ -53,15 +50,15 @@
     },
     {
       "path": "domain/Crypto.mrs",
-      "bytes": 4859
+      "bytes": 4910
     },
     {
       "path": "domain/Dev.mrs",
-      "bytes": 6575
+      "bytes": 6600
     },
     {
       "path": "domain/Direct.mrs",
-      "bytes": 510
+      "bytes": 656
     },
     {
       "path": "domain/Disney.mrs",
@@ -81,15 +78,11 @@
     },
     {
       "path": "domain/GameDownload.mrs",
-      "bytes": 1872
-    },
-    {
-      "path": "domain/GameDownloadCustom.mrs",
-      "bytes": 511
+      "bytes": 2199
     },
     {
       "path": "domain/GameStore.mrs",
-      "bytes": 9655
+      "bytes": 9824
     },
     {
       "path": "domain/Games.mrs",
@@ -145,7 +138,7 @@
     },
     {
       "path": "domain/Porn.mrs",
-      "bytes": 51431
+      "bytes": 51485
     },
     {
       "path": "domain/Private.mrs",
@@ -153,7 +146,7 @@
     },
     {
       "path": "domain/Proxy.mrs",
-      "bytes": 199165
+      "bytes": 199417
     },
     {
       "path": "domain/SocialMedia.mrs",
@@ -161,7 +154,7 @@
     },
     {
       "path": "domain/Speedtest.mrs",
-      "bytes": 40261
+      "bytes": 40617
     },
     {
       "path": "domain/Spotify.mrs",
@@ -217,11 +210,11 @@
     },
     {
       "path": "ip/China.mrs",
-      "bytes": 37710
+      "bytes": 37784
     },
     {
       "path": "ip/Cloudflare.mrs",
-      "bytes": 4371
+      "bytes": 4373
     },
     {
       "path": "ip/Emby.mrs",
@@ -229,15 +222,15 @@
     },
     {
       "path": "ip/Facebook.mrs",
-      "bytes": 553
+      "bytes": 545
     },
     {
       "path": "ip/Google.mrs",
-      "bytes": 8075
+      "bytes": 8134
     },
     {
       "path": "ip/Netflix.mrs",
-      "bytes": 314
+      "bytes": 317
     },
     {
       "path": "ip/Private.mrs",
@@ -267,7 +260,7 @@
   "txt_artifacts": [
     {
       "path": "domain/AI.txt",
-      "bytes": 5255
+      "bytes": 5134
     },
     {
       "path": "domain/Advertising.txt",
@@ -287,7 +280,7 @@
     },
     {
       "path": "domain/China.txt",
-      "bytes": 1630571
+      "bytes": 1628494
     },
     {
       "path": "domain/Claude.txt",
@@ -303,23 +296,15 @@
     },
     {
       "path": "domain/Crypto.txt",
-      "bytes": 8490
-    },
-    {
-      "path": "domain/CustomDirect.txt",
-      "bytes": 67
-    },
-    {
-      "path": "domain/CustomProxy.txt",
-      "bytes": 66
+      "bytes": 8524
     },
     {
       "path": "domain/Dev.txt",
-      "bytes": 12426
+      "bytes": 12405
     },
     {
       "path": "domain/Direct.txt",
-      "bytes": 697
+      "bytes": 977
     },
     {
       "path": "domain/Disney.txt",
@@ -339,15 +324,11 @@
     },
     {
       "path": "domain/GameDownload.txt",
-      "bytes": 14210
-    },
-    {
-      "path": "domain/GameDownloadCustom.txt",
-      "bytes": 1038
+      "bytes": 15026
     },
     {
       "path": "domain/GameStore.txt",
-      "bytes": 18727
+      "bytes": 19018
     },
     {
       "path": "domain/Games.txt",
@@ -403,7 +384,7 @@
     },
     {
       "path": "domain/Porn.txt",
-      "bytes": 107223
+      "bytes": 107297
     },
     {
       "path": "domain/Private.txt",
@@ -411,7 +392,7 @@
     },
     {
       "path": "domain/Proxy.txt",
-      "bytes": 459551
+      "bytes": 460293
     },
     {
       "path": "domain/SocialMedia.txt",
@@ -419,7 +400,7 @@
     },
     {
       "path": "domain/Speedtest.txt",
-      "bytes": 85264
+      "bytes": 86265
     },
     {
       "path": "domain/Spotify.txt",
@@ -463,7 +444,7 @@
     },
     {
       "path": "ip/AI.txt",
-      "bytes": 115
+      "bytes": 141
     },
     {
       "path": "ip/Advertising.txt",
@@ -475,11 +456,11 @@
     },
     {
       "path": "ip/China.txt",
-      "bytes": 153870
+      "bytes": 153274
     },
     {
       "path": "ip/Cloudflare.txt",
-      "bytes": 10690
+      "bytes": 10649
     },
     {
       "path": "ip/Emby.txt",
@@ -487,15 +468,15 @@
     },
     {
       "path": "ip/Facebook.txt",
-      "bytes": 2192
+      "bytes": 2152
     },
     {
       "path": "ip/Google.txt",
-      "bytes": 169986
+      "bytes": 171779
     },
     {
       "path": "ip/Netflix.txt",
-      "bytes": 2155
+      "bytes": 2275
     },
     {
       "path": "ip/Private.txt",

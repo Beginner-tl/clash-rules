@@ -1,5 +1,5 @@
 # NAME: GameStore
-# TOTAL: 1023
+# TOTAL: 1038
 # NOTE: derived rule entries
 
 +.100classicbooks.com
@@ -350,6 +350,7 @@
 +.laohu.com
 +.lcsmerch.com
 +.leaguehighschool.com
++.leagueofgraphs.com
 +.leagueoflegends.ca
 +.leagueoflegends.co.kr
 +.leagueoflegends.com
@@ -519,9 +520,11 @@
 +.origin.com
 +.origin.tv
 +.orithegame.com
++.overwolf.com
 +.pandanet-igs.com
 +.papermc.io
 +.paragon.com
++.paydaythegame.com
 +.personaltrainermath.com
 +.pinkcore.com
 +.pinkcore.net
@@ -568,6 +571,7 @@
 +.pokemonvgc.com
 +.pokemonwifi.net
 +.popcap.com
++.porofessor.gg
 +.priconne-redive.jp
 +.prismlauncher.org
 +.projectapex.com
@@ -913,6 +917,7 @@ a4e8s8k3.map2.ssl.hwcdn.net
 account.microsoft.com
 accounts.nintendo.com
 alibaba.cdn.steampipe.steamcontent.com
+analytics.starbreeze.com
 assets.ppy.sh
 avatargarenanow-a.akamaihd.net
 blizzard.nefficient.co.kr
@@ -937,34 +942,42 @@ eaassets-a.akamaihd.net
 end-api.shallow.ink
 end.shallow.ink
 f3b7q2p3.ssl.hwcdn.net
+fast.nexx360.io
 flightsimulator.azureedge.net
+g.oncehuman.game
 gamedownloads-rockstargames-com.akamaized.net
 gear.blizzard.com
 gog-cdn-lumen.secure2.footprint.net
 gog-cdn.akamaized.net
 gog.qtlglb.com
 hb.imgix.net
+hub.virtamate.com
 lazer.ppy.sh
+lib.starbreeze.com
 login.microsoftonline.com
 lolstatic-a.akamaihd.net
 m1.ppy.sh
 media-rockstargames-com.akamaized.net
 my.nintendo.com
+nebula.starbreeze.com
 notify.ppy.sh
 opgg-static.akamaized.net
 origin-a.akamaihd.net
 osu.ppy.sh
 prd-priconne-redive.akamaized.net
 prodforza.blob.core.windows.net
+prodregistryv2.org
 pubg1.battleye.com
 roblox-load-generator-configuration.s3.us-east-2.amazonaws.com
 roblox-poc.global.ssl.fastly.net
 robloxcorp.s.llnwi.net
 rtm.tnt-ea.com
 s.team
+s3cdn.virtamate.com
 sentry.ppy.sh
 shop.battle.net
 spectator.ppy.sh
+srv.scalibur.io
 ssl-lvlt.cdn.ea.com
 steam.tv
 steambroadcast.akamaized.net
@@ -1018,10 +1031,12 @@ ubistatic6-a.akamaihd.net
 ubistatic7-a.akamaihd.net
 ubistatic8-a.akamaihd.net
 ubistatic9-a.akamaihd.net
+valsnxp.www.vivox.com
 videos-rockstargames-com.akamaized.net
 wb-agora-hydra-file-storage-k1.s3.amazonaws.com
 www.epicgames.com
 www.microsoft.com
 www.nintendo.com
 www.origin.com
+www.overkillsoftware.com
 xz.pphimalayanrt.com

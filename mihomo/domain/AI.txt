@@ -1,6 +1,6 @@
 # NAME: AI
-# TOTAL: 273
-# NOTE: base rule entries
+# TOTAL: 265
+# NOTE: mirrored base entries with exact exclusions
 
 +.agentclientprotocol.com
 +.ai.com
@@ -10,18 +10,15 @@
 +.aiproxy.io
 +.aisandbox-pa.googleapis.com
 +.aistudio.google.com
-+.algolia.net
 +.anthropic.com
 +.antigravity-unleash.goog
 +.antigravity.google
 +.anythingllm.com
 +.api.statsig.com
 +.api2d.com
-+.apis.google.com
 +.app-analytics-services.com
 +.apps.mzstatic.com
 +.arena.ai
-+.auth0.com
 +.bard.google.com
 +.cerebras.ai
 +.character.ai
@@ -95,8 +92,6 @@
 +.generativelanguage.googleapis.com
 +.githubcopilot.com
 +.githubnext.com
-+.googleapis.com
-+.googleusercontent.com
 +.grazie.ai
 +.grazie.aws.intellij.net
 +.grok.com
@@ -177,7 +172,6 @@
 +.robinfrontend-pa.googleapis.com
 +.runwayml.com
 +.segment.io
-+.sentry.io
 +.sider.ai
 +.smoot.apple.com
 +.sora.com
@@ -244,7 +238,6 @@ copilotprodattachments.blob.core.windows.net
 cp4.cloudflare.com
 d3ssuo6fbvr.cloudfront.net
 daily-cloudcode-pa.googleapis.com
-default.exp-tas.com
 edgeservices.bing.com
 gateway.ai.cloudflare.com
 gateway.icloud.com
@@ -271,7 +264,6 @@ pplx-res.cloudinary.com
 proactivebackend-pa.googleapis.com
 production-openaicom-storage.azureedge.net
 servd-anthropic-website.b-cdn.net
-static.cloudflareinsights.com
 sydney.bing.com
 webchannel-alkalimakersuite-pa.clients6.google.com
 www.bing.com

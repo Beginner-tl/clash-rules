@@ -1,5 +1,5 @@
 # NAME: Crypto
-# TOTAL: 487
+# TOTAL: 490
 # NOTE: base rule entries
 
 +.1inch.io
@@ -158,7 +158,10 @@
 +.flare.network
 +.fundingrates.xyz
 +.fundpaypal.com
++.gate.com
 +.gate.io
++.gate.tv
++.gateapi.io
 +.gatedata.org
 +.gateimg.com
 +.gateio.live

@@ -1,5 +1,5 @@
 # NAME: Dev
-# TOTAL: 660
+# TOTAL: 659
 # NOTE: base rule entries
 
 +.01.org
@@ -22,7 +22,6 @@
 +.androidify.com
 +.apache.org
 +.api-extractor.com
-+.api2.amplitude.com
 +.apisof.net
 +.appcenter.ms
 +.apple-cloudkit.com

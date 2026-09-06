@@ -1,6 +1,6 @@
 # NAME: Proxy
-# TOTAL: 27349
-# NOTE: base rule entries
+# TOTAL: 27398
+# NOTE: derived rule entries
 
 +.000webhost.com
 +.01.org
@@ -37,6 +37,8 @@
 +.119474.xyz
 +.11jav.com
 +.123-hp.com
++.123av.com
++.123av.me
 +.123bin.cc
 +.123dapp.com
 +.123dappipad.com
@@ -3699,6 +3701,7 @@
 +.blackandstacked.com
 +.blackboxgames.com
 +.blacked.com
++.blackedraw.com
 +.blackfridaydrebeatsnew.com
 +.blackfridaydrebeatsshop.com
 +.blackhomeporn.com
@@ -9596,6 +9599,8 @@
 +.gate.cc
 +.gate.com
 +.gate.io
++.gate.tv
++.gateapi.io
 +.gatecoin.com
 +.gatedata.org
 +.gateimg.com
@@ -14004,6 +14009,7 @@
 +.linux.do
 +.linux.org
 +.linux.org.hk
++.linux.sb
 +.linuxfoundation.org
 +.linuxfromscratch.org
 +.linuxmint.com
@@ -15072,6 +15078,7 @@
 +.milftube.pro
 +.milftugs.com
 +.milfvr.com
++.milfy.com
 +.milfzr.com
 +.miliav.com
 +.milkmanbook.com
@@ -19553,6 +19560,7 @@
 +.roborecall.com
 +.robotoffice.com
 +.robustnessiskey.com
++.roc-taiwan.org
 +.rocket-inc.net
 +.rocket.chat
 +.rocketfishproducts.com
@@ -19597,6 +19605,7 @@
 +.roudaosp.cc
 +.roughebonysex.com
 +.roughman.net
++.roushuwo.com
 +.routerboard.com
 +.routledgehandbooks.com
 +.rowblocks.com
@@ -20724,6 +20733,7 @@
 +.slashine.onl
 +.slavbank.ru
 +.slavicstar.com
++.slayed.com
 +.slc.tl
 +.sldolls.com
 +.sleazyfork.org
@@ -21722,6 +21732,7 @@
 +.taipeitimes.com
 +.taisounds.com
 +.taiwanadultexpo.com
++.taiwanembassy.org
 +.taiwanhot.net
 +.taiwanjustice.net
 +.taiwanncf.org.tw
@@ -22746,6 +22757,7 @@
 +.turntable.fm
 +.tusco.ru
 +.tushy.com
++.tushyraw.com
 +.tuta.com
 +.tuta.io
 +.tutamail.com
@@ -23721,6 +23733,7 @@
 +.vivaxnxx.com
 +.vivthomas.com
 +.vixen.com
++.vixengroup.com
 +.vixvids.to
 +.vjav.com
 +.vjmedia.com.hk
@@ -24751,6 +24764,7 @@
 +.wsjplus.com
 +.wsjshop.com
 +.wsjwine.com
++.wtfpass.com
 +.wtfpeople.com
 +.wtmobile.com
 +.wto.org
@@ -26333,6 +26347,7 @@ alt8-mtalk.google.com
 amitabhafoundation.us
 amp-api.podcasts.apple.com
 amp.akamaized.net
+ana.bandi.so
 android.googlesource.com
 andygod.com
 angle.com.tw
@@ -26344,7 +26359,12 @@ anysex.com
 aod-pod-uk-live.akamaized.net
 aofriend.com
 api-p.videomarket.jp
+api.gofile.io
+api.iconify.design
 api.ip.sb
+api.m-team.io
+api.simplesvg.com
+api.unisvg.com
 api.viu.now.com
 apkmirror.disqus.com
 apl-hamivideo.cdn.hinet.net
@@ -26365,6 +26385,7 @@ assets.ppy.sh
 assets1.xboxlive.com
 assets2.xboxlive.com
 atchinese.com
+attach.m-team.co
 audio-ak-spotify-com.akamaized.net
 audio4-ak-spotify-com.akamaized.net
 avatargarenanow-a.akamaihd.net
@@ -26373,6 +26394,7 @@ az668014.vo.msecnd.net
 az764295.vo.msecnd.net
 azure.microsoft.com
 azuremarketplace.microsoft.com
+bandisoft.app
 bangchen.net
 baramangaonline.com
 bartender.dowjones.com
@@ -26418,6 +26440,7 @@ catchgod.com
 cbsi.live.ott.irdeto.com
 cbsplaylistserver.aws.syncbak.com
 cbsservice.aws.syncbak.com
+cdn-contents.weverseshop.io
 cdn-spotify-experiments.conductrics.com
 cdn.js7k.com
 cdn.jsdelivr.net
@@ -26436,6 +26459,7 @@ chrdnet.com
 cisco.evergage.com
 ciscolivehls-i.akamaihd.net
 city365.ca
+cl.imghosts.com
 client-teamviewer-com.trafficmanager.net
 clients1.google.com
 cloudaicompanion.googleapis.com
@@ -26446,6 +26470,7 @@ cn-proxy.com
 cn.fmnnow.com
 cn.shafaqna.com
 community.oneplus.com
+config.ap2.airbridge.io
 configuration-lb.ls-apple.com.akadns.net
 copilot-proxy.githubusercontent.com
 copilot-workspace.githubnext.com
@@ -26581,6 +26606,7 @@ eset-prod-ca48648d0ce7cadf.elb.eu-central-1.amazonaws.com
 espn.api.edge.bamgrid.com
 espn.hb.omtrdc.net
 espndotcom.tt.omtrdc.net
+event.ap2.airbridge.io
 f3b7q2p3.ssl.hwcdn.net
 facesoftibetanselfimmolators.info
 facetime.apple.com
@@ -26594,6 +26620,8 @@ feeds.fileforum.com
 feitianacademy.org
 ff.im
 fhreports.net
+file-ap-hkg-1.gofile.io
+files.hyperx.com
 firearmsworld.net
 firebase.google.com
 firebase.googleapis.com
@@ -26615,6 +26643,7 @@ forum.cyberctm.com
 foxgay.com
 foxnewsplayer-a.akamaihd.net
 fpmt.org
+fr.time.is
 freakshare.com
 freetibetanheroes.org
 freevpn.me
@@ -26640,6 +26669,7 @@ github-production-user-asset-6210df.s3.amazonaws.com
 github.global.ssl.fastly.net
 gitlab-assets.oss-cn-hongkong.aliyuncs.com
 gmp4.com
+gofile.io
 gog-cdn-lumen.secure2.footprint.net
 gog-cdn.akamaized.net
 gojet.krtco.com.tw
@@ -26680,7 +26710,9 @@ hub.slarker.me
 hulu.playback.edge.bamgrid.com
 hustlercash.com
 i.jeded.com
+i.sng.link
 ift.tt
+iili.io
 iipdigital.usembassy.gov
 images-eu.ssl-images-amazon.com
 images-fe.ssl-images-amazon.com
@@ -26688,6 +26720,7 @@ images-na.ssl-images-amazon.com
 imb.org
 img-prod-cms-rt-microsoft-com.akamaized.net
 img-s-msn-com.akamaized.net
+img.digitalcore.club
 img.dlsite.jp
 impala-media-production.s3.amazonaws.com
 imperial.insendi.com
@@ -26826,22 +26859,26 @@ openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 openaicom.imgix.net
 openaicomproductionae4b.blob.core.windows.net
 opgg-static.akamaized.net
+opgg.rybbit.com
 opus-gaming.com
 origin-a.akamaihd.net
 osu.ppy.sh
 owl.li
 p-events-delivery.akamaized.net
+p.juijx.com
 p16-tiktokcdn-com.akamaized.net
 packages.microsoft.com
 paper-attachments.s3.amazonaws.com
 payments-jp.amazon.com
 pchomeonline.com.tw
 pemulihan.or.id
+phinf.wevpstatic.net
 pki.google.com
 play-edge.itunes.apple.com
 pornhubdeutsch.net
 pornsharing.com
 poshtestgallery.cloudapp.net
+postimgs.org
 ppl-ai-file-upload.s3.amazonaws.com
 pplx-res.cloudinary.com
 practivate.adobe.com
@@ -26914,6 +26951,7 @@ rsshub.woodland.cafe
 rsshub2.asailor.org
 rtm.tnt-ea.com
 rxhj.net
+s.gofile.io
 s3-ap-northeast-1.amazonaws.com
 s3-ap-southeast-1.amazonaws.com
 s3-ap-southeast-2.amazonaws.com
@@ -27024,6 +27062,7 @@ standchartbank.sc.omtrdc.net
 standchartbank.tt.omtrdc.net
 startuplivingchina.com
 static-hamivideo.cdn.hinet.net
+static.airbridge.io
 static.siege-amazon.com
 statics-marketingsites-eas-ms-com.akamaized.net
 statics-marketingsites-eus-ms-com.akamaized.net
@@ -27042,13 +27081,16 @@ steamugcquincy.blob.core.windows.net
 steamusercontent-a.akamaihd.net
 steamuserimages-a.akamaihd.net
 steamvideo-a.akamaihd.net
+store3.gofile.io
 straitsx-826709081262441084-b790f87a2ae6fd417434295.freshchat.com
+sub1.sntp.me
 supercell.helpshift.com
 supercell.zendesk.com
 superzooi.com
 suprememastertv.com
 surfeasy.com.au
 t.ssp.hinet.net
+t1.picb.cc
 t21.nikkei.co.jp
 t21ipau.nikkei.co.jp
 taa-usa.org
@@ -27089,6 +27131,7 @@ time.cloudflare.com
 time.euro.apple.com
 time.facebook.com
 time.google.com
+time.is
 time.nist.gov
 time.windows.com
 time1.facebook.com
@@ -27114,6 +27157,7 @@ trojan-gfw.github.io
 tubeislam.com
 tumutanzi.com
 tunein.com
+tupian.li
 tushycash.com
 tuzaijidi.com
 tv.apple.com
@@ -27162,6 +27206,7 @@ ulrichsweb.serialssolutions.com
 unblockdmm.com
 uncyclopedia.hk
 uncyclopedia.tw
+up.ccp.ovh
 upornia.com
 ut1-time.colorado.edu
 ut1-wwv.nist.gov
@@ -27174,6 +27219,7 @@ uymaarip.com
 ve-dash-uk-live.akamaized.net
 ve-uhd-push-uk-live.akamaized.net
 venmo.s3.amazonaws.com
+ver.bandi.so
 videos-rockstargames-com.akamaized.net
 viu.tv
 vllcs.org
@@ -27318,6 +27364,7 @@ wwis-dubc1-vip99.adobe.com
 www-cdn.icloud.com.akadns.net
 www.antd.org
 www.aolnews.com
+www.bandisoft.com
 www.cmoinc.org
 www.dmm.com
 www.eastturkistan.net
@@ -27331,12 +27378,14 @@ www.microsoft.com
 www.monlamit.org
 www.oxid.it
 www.quora.com.cdn.cloudflare.net
+www.refa.net
 www.s4miniarchive.com
 www.skype.com
 www.tablesgenerator.com
 www.taiwanonline.cc
 www.websnapr.com
 www.zensur.freerk.com
+www3.corsair.com
 xianjian.tw
 xing.com
 xtls.github.io

@@ -1,6 +1,6 @@
 # NAME: Speedtest
-# TOTAL: 4371
-# NOTE: base rule entries
+# TOTAL: 4405
+# NOTE: derived rule entries
 
 +.07internet.ro
 +.099.net.il
@@ -607,6 +607,7 @@
 2.uk-lon.voxtl.com
 2095101.ru
 244.sub-198-224-167.myvzw.com
+25748s.ha.azioncdn.net
 3570k.myvnc.com
 44speedcheck.lhric.org
 45.164.244-18.reidanet.net.br
@@ -614,6 +615,7 @@
 4glte.ktrn.rw
 4glte.orn.rw
 4isp.it
+58ia1ql1k9b4y45u.test.resolver.perfops.net
 5bbbroadband.com
 5g.shunicomtest.com
 5g.unicomjnwy.com
@@ -623,6 +625,7 @@
 8bit.net.br
 8x8.com
 91-215-188-162-st.ria-link.ru
+9gnlrnjxcsmci09a.test.resolver.perfops.net
 Cambodia-isp01.maxbit.com.kh
 ST1.stratusnet.com
 Wint.global
@@ -773,7 +776,11 @@ cariranet.com.br
 carpbarlad.cloud
 cbios.co
 cconnect.net.br
+cdn.perfops.net
+cdn.perftest.f5-cloud-demo.com
 cdn.rochut.com
+cdn23602612.ahacdn.me
+cdnperf.vergecloud.com
 central.pandaconect.net
 centralfm.com.br
 centralnetfibra.dns04.com
@@ -864,6 +871,7 @@ denpa893-hikari.mydns.jp
 denpa893-network.iobb.net
 dev.thehostingguy.com
 dev01.kbl.systems
+devnull.perfops.net
 diefsspeed001.fsit.com
 diegem-1.iglobe.be
 digital.bo
@@ -912,6 +920,7 @@ eastex.com
 easyconnect.com.br
 ebiiim.com
 edatel.com.br
+edge.cdn-vitals.com
 edlink18.net
 eltronik.net.pl
 epiknetwork.net
@@ -985,6 +994,7 @@ gameeye.huaweicloud.com
 gateway.expressnikopol.net.ua
 gato.mydns.jp
 gds.net.id
+gdt2ue4rkjoettx1.test.resolver.perfops.net
 generation-x.eu
 genesisnetservice.com
 genesisnetservice.com.br
@@ -1188,6 +1198,7 @@ joburg.aerocom.co.za
 joinet.ro
 jpffa.jpn.ph
 jun.0j0.jp
+jyoeuacekpxb-pull.bpmedialive.com
 kanchi1.velocityinternetservices.com
 kapper.net
 kaztransnet.kz
@@ -1310,6 +1321,8 @@ meddin.ch
 media-upload.net
 media.brain.net.pk
 media.garantexpress.ru
+medianova-cdnperf.mncdn.com
+medianova-cdnvperf.mncdn.com
 medicion.une.net.co
 medidor.7n.net.br
 medidor.alterna.com.br
@@ -1402,6 +1415,7 @@ mrtg.bdhub.com
 msibitnap.apfutura.net
 multicableshn.ddns.net
 multiplic.redirectme.net
+mva9dr71txf2hciq.test.resolver.perfops.net
 mx01.quantums.com.my
 my-speed.info
 my.albarq.ly
@@ -1650,8 +1664,17 @@ peacedata.us
 peerget.net
 pegasnet.site
 pegasuswave.in
+perf.ialicdn.com
 perf.imagine.ie
 perf.keyyo.net
+perfops-bench.sos-ch-gva-2.exoscale-cdn.com
+perfops.edge.run
+perfops.gcorelabs.com
+perfops.pc.cdn.bitgravity.com
+perfops.swiftycdn.net
+perfops1.byteperf.com
+perfops2.byteperf.com
+perfops3.byteperf.com
 perfsonar-test.dartmouth.edu
 peritiba1.conectturbo.com.br
 pertec.net.br
@@ -1695,6 +1718,7 @@ provedorhnet.com.br
 provedornorte.com.br
 provedorplusnet.com.br
 provvisorio.space
+proxy.canary.scrubbingcenter.com
 prtg.queimadasnet.com.br
 prtg.rg3telecom.com.br
 prtg.speedalliance.com.br
@@ -1759,6 +1783,11 @@ rr.unosms.us
 rs.unlimited.rs
 rslnettelecom.com.br
 rubidium.burlingtontelecom.net
+rum-cdn.perfops.net
+rum-cust.perfops.cdb.cdn.orange.com
+rum-mkt.perfops.cdb.cdn.orange.com
+rum.perfops.cdb.cdn.orange.com
+rum2.perfops.cdb.cdn.orange.com
 rvnet.net.br
 rwinternet.com
 rychlost.blucina.net
@@ -3566,6 +3595,8 @@ test-adsl.coopvgg.com.ar
 test-ams.virtono.com
 test-blr-bj.canalbox.net
 test-lacza.pl
+test-perfops.blazingcdn.com
+test-perfops.haproxy.com
 test.4d-tl.com
 test.ads.net.id
 test.advantun.com
@@ -4038,6 +4069,7 @@ ultraconnect.ns01.us
 ultrafast.gr
 ultralinkce.com.br
 ultranet.com.ua
+ultrawaf.canary.scrubbingcenter.com
 unix2.mtnet.net.br
 unix2.sagainternet.com.br
 unwiredltd.com
@@ -4059,6 +4091,7 @@ v.ufanet.ru
 v.vitalnetprovedor.com.br
 vale.grupocisvale.com.br
 vaz-2106.ru
+vbnm6yqblu405gjy.test.resolver.perfops.net
 vega.skyinet.net
 vel1.atualnet.net
 vel1.neolink.com.br
@@ -4358,6 +4391,7 @@ xnetpro.ro
 xst1.2i3.net
 xtracom.in
 xydxcs.com
+xzyuif3czyit4qyc.test.resolver.perfops.net
 yamalextrim.com
 yourcom-testspeed.dyndns.info
 yrga.ru
